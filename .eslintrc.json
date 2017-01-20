@@ -1,0 +1,8 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": ["error", "tab"],
+    "no-undef": 0,
+    "no-unused-vars": 0
+  }
+}
