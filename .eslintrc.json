@@ -1,8 +1,12 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "extends": "eslint:recommended",
   "rules": {
     "indent": ["error", "tab"],
     "no-undef": 0,
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "no-console": 0
   }
 }
