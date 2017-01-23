@@ -37,6 +37,10 @@ var Page = db.define(
 		},
 		status: {
 			type: Sequelize.ENUM('open', 'closed')
+		},
+		tags: {
+			type: Sequelize.ARRAY(Sequelize.STRING),
+			allowNull: false
 		}
 	},
 	{

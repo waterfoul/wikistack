@@ -22,10 +22,12 @@ router.post('/', function(req, res, next) {
 		.then((values) => {
 			var user = values[0];
 			// var isCreated = values[1];
+			var tags = req.body.tags.split(/, */g);
 
 			const page = models.Page.build({
 				title: req.body['page-title'],
-				content: req.body['page-content']
+				content: req.body['page-content'],
+				tags: tags
 			});
 
 			return page.save().then(() => page.setAuthor(user));

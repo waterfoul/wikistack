@@ -3,7 +3,12 @@
 {% block content %}
   <h3>{{page.title}}<small> (<a href="{{page.urlTitle}}/similar">Similar</a>)</small></h3>
   <h4>by <a href="/users/{{page.author.id}}">{{page.author.name}} &lt;{{page.author.email}}&gt;</a></h4>
-  <div>PLACEHOLDER TAG LIST</div>
+  <div>
+     {% for tag in page.tags %}<!--
+     -->{{ "," if loop.index !== 1 }}
+        {{tag}}<!--
+  -->{% endfor %}
+  </div>
   <hr/>
   <div class="page-body">{{page.content}}</div>
   <hr/>
