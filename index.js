@@ -9,7 +9,9 @@ var models = require('./models');
 
 //Setup
 var app = express();
-var env = nunjucks.configure('views');
+nunjucks.configure('views');
+
+app.engine('html', nunjucks.render);
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
