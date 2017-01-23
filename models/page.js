@@ -1,5 +1,7 @@
-var db = require('./db');
 var Sequelize = require('sequelize');
+
+var db = require('./db');
+var User = require('./user');
 
 function generateUrlTitle (title) {
 	if (title) {
@@ -47,5 +49,7 @@ var Page = db.define(
 		}
 	}
 );
+
+Page.belongsTo(User, { as: 'author' });
 
 module.exports = Page;
