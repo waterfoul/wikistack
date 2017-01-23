@@ -35,10 +35,6 @@ var Page = db.define(
 		},
 		status: {
 			type: Sequelize.ENUM('open', 'closed')
-		},
-		date: {
-			type: Sequelize.DATE,
-			defaultValue: Sequelize.NOW
 		}
 	},
 	{
