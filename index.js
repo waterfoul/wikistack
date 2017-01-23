@@ -5,6 +5,7 @@ var morgan = require('morgan');
 var path = require('path');
 var nunjucks = require('nunjucks');
 var bodyParser = require('body-parser');
+var models = require('./models');
 
 //Setup
 var app = express();
@@ -23,6 +24,13 @@ app.engine('html', nunjucks.render);
 app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use('/', require('./routes'));
 
-app.listen(8042, () => {
-	console.log('Listening on http://localhost:8042');
-});
+models.syncAll().then(
+  function(){
+    app.listen(8042, () => {
+      console.log('Listening on http://localhost:8042');
+    });
+  }
+)
+.catch(console.error);
+
+
