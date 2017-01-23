@@ -13,5 +13,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.use('/wiki', require('./wiki'));
+router.use('/users', require('./users'));
 
 module.exports = router;
